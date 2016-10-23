@@ -191,6 +191,10 @@ default
 call sniff
 default
 
+[ nasty bear ]
+call sniff
+default
+
 [ The Briny Deeps ]
 note TODO: Figure out a way to use the lasso without overusing it
 call always

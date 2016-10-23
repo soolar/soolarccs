@@ -32,13 +32,14 @@ Simply run `svn checkout https://github.com/soolar/soolarccs/trunk/` in KoLMafia
 
 ## Zone specific support
 ### Underwater zones
-Uses pulled red taffy if available.
+* uses pulled red taffy if available
 
 ### Barf Mountain
-Sniffs garbage tourists
+* sniffs garbage tourist
+* sniffs nasty bear
 
 ### Deep Machine Tunnels
-Mixes abstractions when possible
+* mixes abstractions when possible
 
 ## Things this ccs will utilize
 ### Reusable combat items
