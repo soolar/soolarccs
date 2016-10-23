@@ -45,12 +45,12 @@ sub staggers
   if hascombatitem Rain-Doh indigo cup
     item Rain-Doh indigo cup
     item Rain-Doh blue balls
-    if hascombatitem nasty-smelling moss
-      item nasty-smelling moss
-    endif
-    if hascombatitem little red book
-      item little red book
-    endif
+  endif
+  if hascombatitem nasty-smelling moss
+    item nasty-smelling moss
+  endif
+  if hascombatitem little red book
+    item little red book
   endif
   skill air dirty laundry
   skill Ply Reality
