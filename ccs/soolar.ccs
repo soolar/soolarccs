@@ -1,5 +1,10 @@
 [ default ]
 call always
+note not in always or any other subroutine because I don't want it to trigger
+note if I'm fighting something that has a unique instant kill method of its own
+if hasskill Fire the Jokester's Gun
+  skill Fire the Jokester's Gun
+endif
 call staggers
 call etc
 call kill
@@ -14,7 +19,7 @@ sub always
   skill summon love gnats
   special action
   skill pocket crumbs
-  skill extract
+  skill Extract
   if !snarfblat 132 && !snarfblat 140
     if hascombatitem rock band flyers
       item rock band flyers
@@ -50,6 +55,7 @@ sub staggers
   skill air dirty laundry
   skill Ply Reality
   skill Cowboy Kick
+  skill Compress
 endsub
 sub etc
   skill Feed
@@ -70,7 +76,7 @@ sub stasis
     use spectre scepter
     goto endstasis
   endif
-  abort "go get a seal tooth or something sheesh"
+  "abort "go get a seal tooth or something sheesh" "
   mark endstasis
 endsub
 sub gremlin
@@ -96,7 +102,6 @@ sub sniff
     skill transcendent olfaction
   endif
 endsub
-note TODO: Figure out a way to use the lasso without overusing it
 sub kill
   skill stuffed mortar shell
   attack
@@ -187,6 +192,7 @@ call sniff
 default
 
 [ The Briny Deeps ]
+note TODO: Figure out a way to use the lasso without overusing it
 call always
 if hascombatitem pulled red taffy
   item pulled red taffy
