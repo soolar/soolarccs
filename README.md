@@ -20,6 +20,7 @@ Simply run `svn checkout https://github.com/soolar/soolarccs/trunk/` in KoLMafia
 ## Quest progress this ccs will make
 * banishes senile lihc with snokebomb
 * sniffs dirty old lihc
+* sniffs dairy goat
 * insults pirates
 * banishes clingy pirate with cocktail napkin
 * uses cigarette lighters in the mob of zeppelin protesters
