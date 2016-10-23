@@ -1,0 +1,297 @@
+[ default ]
+call always
+call staggers
+call etc
+call kill
+
+[ global prefix ]
+scrollwhendone
+steal
+"abort missed 10"
+"abort hppercentbelow 25"
+"abort pastround 25"
+sub always
+  skill summon love gnats
+  special action
+  skill pocket crumbs
+  skill extract
+  if !snarfblat 132 && !snarfblat 140
+    if hascombatitem rock band flyers
+      item rock band flyers
+    endif
+    if hascombatitem jam band flyers
+      item jam band flyers
+    endif
+  endif
+  while hasskill Shoot Ghost
+    skill Shoot Ghost
+    if hasskill Trap Ghost
+      skill Trap Ghost
+    endif
+  endwhile
+  skill summon mayfly swarm
+endsub
+sub staggers
+  if hascombatitem Time-Spinner
+    item Time-Spinner
+  endif
+  skill Summon Love Mosquito
+  skill compress
+  if hascombatitem Rain-Doh indigo cup
+    item Rain-Doh indigo cup
+    item Rain-Doh blue balls
+    if hascombatitem nasty-smelling moss
+      item nasty-smelling moss
+    endif
+    if hascombatitem little red book
+      item little red book
+    endif
+  endif
+  skill air dirty laundry
+  skill Ply Reality
+  skill Cowboy Kick
+endsub
+sub etc
+  skill Feed
+  if hascombatitem porquoise-handled sixgun
+    item porquoise-handled sixgun
+  endif
+endsub
+sub stasis
+  if hascombatitem dictionary
+    use dictionary
+    goto endstasis
+  endif
+  if hascombatitem seal tooth
+    use seal tooth
+    goto endstasis
+  endif
+  if hascombatitem spectre scepter
+    use spectre scepter
+    goto endstasis
+  endif
+  abort "go get a seal tooth or something sheesh"
+  mark endstasis
+endsub
+sub gremlin
+  if hascombatitem rock band flyers && !match " whips out a "
+    use rock band flyers
+  endif
+  if hascombatitem jam band flyers && !match " whips out a "
+    use jam band flyers
+  endif
+  if hasskill extract && !match " whips out a "
+    skill extract
+  endif
+  while !(match " whips out a " || match "does a bombing run over your head" || match "uses the random junk around him" || match "bites you in the fibula" || match "picks a beet off of itself" || match "picks a radish off of itself")
+    call stasis
+  endwhile
+  if match " whips out a "
+    use molybdenum magnet
+  endif
+endsub
+note add avatar path olfaction alternatives some time
+sub sniff
+  if !haseffect on the trail && hasskill transcendent olfaction
+    skill transcendent olfaction
+  endif
+endsub
+note TODO: Figure out a way to use the lasso without overusing it
+sub kill
+  skill stuffed mortar shell
+  attack
+  repeat
+endsub
+
+[ senile lihc ]
+skill snokebomb
+default
+
+[ dirty old lihc ]
+call sniff
+default
+
+[ dairy goat ]
+call sniff
+default
+
+[ barrrney's ]
+skill summon love gnats
+item The Big Book of Pirate Insults
+default
+
+[ clingy pirate ]
+if hascombatitem cocktail napkin
+  call always
+  item cocktail napkin
+endif
+default
+
+[ mob of zeppelin protesters ]
+if hascombatitem cigarette lighter
+  call always
+  item cigarette lighter
+endif
+default
+
+[ red zeppelin ]
+if hascombatitem glark cable && !monstername Ron "The Weasel" Copperhead
+  call always
+  item glark cable
+endif
+default
+
+[ bob racecar ]
+if hascombatitem disposable instant camera
+  item disposable instant camera
+endif
+call sniff
+default
+
+[ racecar bob ]
+section bob racecar
+
+[ batwinged gremlin ]
+if snarfblat 182
+  call gremlin
+endif
+default
+
+[ erudite gremlin ]
+if snarfblat 184
+  call gremlin
+endif
+default
+
+[ spider gremlin ]
+if snarfblat 183
+  call gremlin
+endif
+default
+
+[ vegetable gremlin ]
+if snarfblat 185
+  call gremlin
+endif
+default
+
+[ tomb rat ]
+call sniff
+if !monstername tomb rat king && hascombatitem tangle of rat tails
+  item tangle of rat tails
+endif
+default
+
+[ garbage tourist ]
+call sniff
+default
+
+[ The Briny Deeps ]
+call always
+if hascombatitem pulled red taffy
+  item pulled red taffy
+endif
+call staggers
+call etc
+call kill
+
+[ Hobopolis Town Square ]
+call always
+call staggers
+call etc
+attack
+repeat
+
+[ The Brinier Deepers ]
+section The Briny Deeps
+
+[ The Sunken Party Yacht ]
+section The Briny Deeps
+
+[ The Briniest Deepests ]
+section The Briny Deeps
+
+[ An Octopus's Garden ]
+section The Briny Deeps
+
+[ The Wreck of the Edgar Fitzsimmons ]
+section The Briny Deeps
+
+[ Madness Reef ]
+section The Briny Deeps
+
+[ The Mer-Kin Outpost ]
+section The Briny Deeps
+
+[ The Skate Park ]
+section The Briny Deeps
+
+[ The Coral Corral ]
+section The Briny Deeps
+
+[ The Ice Hole ]
+section The Briny Deeps
+
+[ Mer-kin Colosseum ]
+section The Briny Deeps
+
+[ Mer-kin Library ]
+section The Briny Deeps
+
+[ Mer-kin Gymnasium ]
+section The Briny Deeps
+
+[ Mer-kin Elementary School ]
+section The Briny Deeps
+
+[ The Marinara Trench ]
+section The Briny Deeps
+
+[ Anemone Mine ]
+section The Briny Deeps
+
+[ The Dive Bar ]
+section The Briny Deeps
+
+[ The Caliginous Abyss ]
+section The Briny Deeps
+
+[ perceiver of sensations ]
+if hascombatitem abstraction: thought
+  item abstraction: thought
+endif
+default
+
+[ performer of actions ]
+if hascombatitem abstraction: sensation
+  item abstraction: sensation
+endif
+default
+
+[ thinker of thoughts ]
+if hascombatitem abstraction: action
+  item abstraction: action
+endif
+default
+
+[ Source Agent ]
+if !hasskill source kick || !hasskill humiliating hack || !hasskill disarmament || !hasskill reboot || mpbelow 225
+  "abort "You don't have the proper skills and/or enough mp to safely automate fighting an agent" "
+endif
+skill humiliating hack
+skill disarmament
+skill reboot
+if hasskill compress && !mpbelow 55
+  skill compress
+endif
+if hasskill big guns && !mpbelow 100
+  skill big guns
+endif
+while hasskill source kick
+  if hppercentbelow 35 && hasskill restore && !mpbelow 125
+    skill restore
+  endif
+  skill source kick
+endwhile
+"abort "You're hosed." "
+
