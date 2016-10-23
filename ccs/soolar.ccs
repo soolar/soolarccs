@@ -79,23 +79,6 @@ sub stasis
   "abort "go get a seal tooth or something sheesh" "
   mark endstasis
 endsub
-sub gremlin
-  if hascombatitem rock band flyers && !match " whips out a "
-    use rock band flyers
-  endif
-  if hascombatitem jam band flyers && !match " whips out a "
-    use jam band flyers
-  endif
-  if hasskill extract && !match " whips out a "
-    skill extract
-  endif
-  while !(match " whips out a " || match "does a bombing run over your head" || match "uses the random junk around him" || match "bites you in the fibula" || match "picks a beet off of itself" || match "picks a radish off of itself")
-    call stasis
-  endwhile
-  if match " whips out a "
-    use molybdenum magnet
-  endif
-endsub
 note add avatar path olfaction alternatives some time
 sub sniff
   if !haseffect on the trail && hasskill transcendent olfaction
@@ -156,28 +139,29 @@ default
 [ racecar bob ]
 section bob racecar
 
-[ batwinged gremlin ]
-if snarfblat 182
-  call gremlin
+[ gremlin ]
+goto molybdenum snarfblat 182 && monstername batwinged
+goto molybdenum snarfblat 183 && monstername spider
+goto molybdenum snarfblat 184 && monstername erudite
+goto molybdenum snarfblat 185 && monstername vegetable
+goto notool
+mark molybdenum
+if hascombatitem rock band flyers && !match " whips out a "
+  use rock band flyers
 endif
-default
-
-[ erudite gremlin ]
-if snarfblat 184
-  call gremlin
+if hascombatitem jam band flyers && !match " whips out a "
+  use jam band flyers
 endif
-default
-
-[ spider gremlin ]
-if snarfblat 183
-  call gremlin
+if hasskill extract && !match " whips out a "
+  skill extract
 endif
-default
-
-[ vegetable gremlin ]
-if snarfblat 185
-  call gremlin
+while !(match " whips out a " || match "does a bombing run over your head" || match "uses the random junk around him" || match "bites you in the fibula" || match "picks a beet off of itself" || match "picks a radish off of itself")
+  call stasis
+endwhile
+if match " whips out a "
+  use molybdenum magnet
 endif
+mark notool
 default
 
 [ tomb rat ]
